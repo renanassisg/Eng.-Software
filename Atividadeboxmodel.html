@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Box Model</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+/* ====== LAYOUT 1 ====== */
+h1 {
+    margin: 30px 0 10px;
+}
+
+.box1 {
+    background-color: purple;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 30px;
+    margin-bottom: 10px;
+}
+
+.box2 {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.box3, .box4 {
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.box3 {
+    background-color: red;
+}
+
+.box4 {
+    background-color: blue;
+}
+
+/* ====== LAYOUT 2 ====== */
+.layout2 {
+    border: 2px dotted purple;
+    padding: 30px;
+    margin-top: 40px;
+    background: white;
+}
+
+.layout2 h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.layout2 h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.divExemplo {
+    border: 2px dotted blue;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.artigo {
+    border: 1px solid red;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.tituloArtigo {
+    border: 1px solid red;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.textoArtigo {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+/* ====== LAYOUT 3 ====== */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.card b {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Tipos de sombra */
+.card1 { box-shadow: 2px 2px 5px rgba(0,0,0,0.2); }
+.card2 { box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3); }
+.card3 { box-shadow: 3px 3px 5px rgba(0,0,0,0.3); }
+.card4 { box-shadow: 3px 3px 5px rgba(0,0,0,0.3), -3px -3px 5px rgba(0,0,0,0.1); }
+.card5 { box-shadow: 0 0 10px rgba(0,0,0,0.3); }
+.card6 { box-shadow: 2px 2px 5px rgba(255,0,0,0.5); }
+
+/* ====== LAYOUT 4 ====== */
+.layout4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.card-top, .card-bottom {
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: white;
+}
+
+.card-top .barra {
+    background-color: #00c8d6;
+    color: #008f9e;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.card-top .conteudo {
+    padding: 15px;
+}
+
+.card-bottom .barra {
+    background-color: #fcbf49;
+    color: #f59f00;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.card-bottom .conteudo {
+    padding: 15px;
+}
+
+.icone {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+/* ====== LAYOUT 5 ====== */
+.layout5 {
+    position: relative;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371);
+    padding: 50px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+    margin-top: 40px;
+}
+
+.caixaImagem {
+    position: absolute;
+    left: 40px;
+    width: 160px;
+    height: 160px;
+    background: linear-gradient(180deg, #ff3b3b, #ff7b7b);
+    border-radius: 20px;
+    box-shadow: 10px 10px 25px rgba(0,0,0,0.2);
+}
+
+.texto {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    padding: 30px;
+    margin-left: 180px;
+    flex: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.texto h2 {
+    margin: 10px 0;
+}
+
+.botao {
+    display: inline-block;
+    background: #ff5f6d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- ====== LAYOUT 1 ====== -->
+<h1>1) Exemplo de Box Model com cores</h1>
+<div class="box1">CSS Box Model</div>
+<div class="box2">Here's a great way to visualize the box model using background colors.</div>
+<div class="box3">Red</div>
+<div class="box4">Blue</div>
+
+<!-- ====== LAYOUT 2 ====== -->
+<h1>2) Box Model com elementos de bloco</h1>
+<div class="layout2">
+    <h2>CSS Box Model</h2>
+    <h3>Block Elements</h3>
+    <div class="divExemplo">div</div>
+    <div class="divExemplo">div</div>
+    <div class="artigo">
+        <div class="tituloArtigo">Article Title</div>
+        <div class="textoArtigo">Here's a super great article paragraph.</div>
+    </div>
+</div>
+
+<!-- ====== LAYOUT 3 ====== -->
+<h1>3) Box Shadows</h1>
+<div class="cards">
+    <div class="card card1"><b>Card 1</b>This is the first card.</div>
+    <div class="card card2"><b>Card 2</b>This is the second card with an inset shadow.</div>
+    <div class="card card3"><b>Card 3</b>This is the third card with an outset shadow.</div>
+    <div class="card card4"><b>Card 4</b>This is the fourth card with multiple shadows.</div>
+    <div class="card card5"><b>Card 5</b>This is the fifth card with a blurred shadow.</div>
+    <div class="card card6"><b>Card 6</b>This is the sixth card with a red shadow.</div>
+</div>
+
+<!-- ====== LAYOUT 4 ====== -->
+<h1>4) Ícones e cartões organizados</h1>
+<div class="layout4">
+    <div class="card-top">
+        <div class="barra">7:25 AM</div>
+        <div class="conteudo">
+            <div class="icone">✈️</div>
+            <p>Boston</p>
+        </div>
+    </div>
+    <div class="card-top">
+        <div class="barra">8:15 PM</div>
+        <div class="conteudo">
+            <div class="icone">🛫</div>
+            <p>Madrid</p>
+        </div>
+    </div>
+    <div class="card-top">
+        <div class="barra">Translate</div>
+        <div class="conteudo">
+            <div class="icone">🌐</div>
+            <p>Spanish</p>
+        </div>
+    </div>
+    <div class="card-bottom">
+        <div class="barra">Bike</div>
+        <div class="conteudo">
+            <div class="icone">🚴</div>
+            <p>13.1 Miles</p>
+        </div>
+    </div>
+    <div class="card-bottom">
+        <div class="barra">Boat</div>
+        <div class="conteudo">
+            <div class="icone">⛵</div>
+            <p>90 Minutes</p>
+        </div>
+    </div>
+    <div class="card-bottom">
+        <div class="barra">Drive</div>
+        <div class="conteudo">
+            <div class="icone">🚗</div>
+            <p>48 Miles</p>
+        </div>
+    </div>
+</div>
+
+<!-- ====== LAYOUT 5 ====== -->
+<h1>5) Card com gradiente e sombra</h1>
+<div class="layout5">
+    <div class="caixaImagem"></div>
+    <div class="texto">
+        <p>26 December 2019</p>
+        <h2>Lorem Ipsum Dolor?</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Recusandae voluptate repellendus magni illo ea animi?</p>
+        <a href="#" class="botao">READ MORE</a>
+    </div>
+</div>
+
+</body>
+</html>

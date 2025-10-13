@@ -1,0 +1,76 @@
+<!--BORDER-->
+<!--Margin com apenas uma informação todas seguem aquele valor; com 4 valores é na seguinte ordem, superio, direita, 
+esquerda e inferior; com 3 valores, superior, direita e esquerda, inferior; com 2 valores, superio e inferior, direita e esq-->
+<!---->
+<!-- Esta dentro da TAG style significa que é um CSS-->
+<!--A partir do p.dotted eu estou definindo tipos de borda, cada um daqueles nomes é uma borda e estou configurando como é-->
+<!---->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS - Border</title>
+</head>
+    <style>
+        body {font-family: system-ui, arial, sans-serif; line-height: 1.4;padding: 24px;} 
+        h1{margin-top: 0}
+        h2{margin: 28px 0 8px}
+        h3{margin: 18px 0 6px; font-weight: 600;}
+        section {border-top: 1px dashed #add; padding-top: 18px; margin-top: 16px;}
+        /* 2) Tipos de borda */
+        .demo1p{padding: 10px; border: 10px; border-width: 4px;border-color: #cac730;}
+        p.dotted {border-style: dotted;}
+        p.dashed {border-style: dashed;}
+        p.solid {border-style: solid;}
+        p.double {border-style: double;}
+        p.groove {border-style: groove;}
+        p.ridge {border-style: ridge;}
+        p.inset {border-style: inset;}
+        p.outset {border-style: outset;}
+        p.none {border-style: none;}
+        p.hidden {border-style: hidden;}
+        p.mix {border-style: dotted dashed solid double;}
+        /* 2) Larguras */
+        .demo2 p{padding: 10px; margin: 12px 0; border-style: solid; border-color: #000;}
+        p.one {border-width: 5px;}
+        p.two {border-width: medium;}
+        p.three {border-style: dotted; border-width: 2px;}
+        p.four {border-style: dotted; border-width: thick;}
+        p.wmix1 {border-width: 5px 20px;}
+        p.wmix2 {border-width: 20px 5px;}
+        p.wmix3 {border-width: 25px 10px 4px 35px;}
+    </style>
+
+<body>
+    <h1> CSS - Border </h1>
+    <section class="demo1">
+        <h2>1) Estilo de bordas</h2>
+        <p class="dotted">border-style: dotted;</p>
+        <p class="dashed">border-style: dashed;</p>
+        <p class="solid">border-style: solid;</p>
+        <p class="double">border-style: double;</p>
+        <p class="groove">border-style: groove;</p>
+        <p class="ridge">border-style: ridge;</p>
+        <p class="inset">border-style: inset;</p>
+        <p class="outset">border-style: outset;</p>
+        <p class="none">border-style: none;</p>
+        <p class="hidden">border-style: hidden;</p>
+        <p class="mix">border-style: mix;</p>
+
+    </section>
+     <section class="demo2"></section>
+        <h2>1) Largura das Bordas</h2>
+        <p class="one">border-width: 5px;</p>
+        <p class="two">border-width: medium;</p>
+        <p class="three">border-style: dotted; border-width: 2px</p>
+        <p class="four">border-style: dotted; border-width: thick</p>
+        <p class="wmix1">border-width: 5px 20px;</p>
+        <p class="wmix2">border-width: 20px 5px;</p>
+        <p class="wmix3">border-width: 25px 10px 4 px 35px;</p>
+        
+        
+</body>
+</html>

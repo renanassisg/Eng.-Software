@@ -1,0 +1,12 @@
+.destaque{color:red;
+        font-weight: bold;}
+
+.meu-link{
+    color:blue
+    text-decoration underline;
+}
+
+.meu-link:hover{
+    color:green;
+    color-decoration: none;
+}
