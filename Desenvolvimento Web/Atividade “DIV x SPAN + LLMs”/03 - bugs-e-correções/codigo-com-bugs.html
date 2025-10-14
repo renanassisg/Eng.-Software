@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exemplos de Problemas CSS</title>
+  <style>
+    /* 1. Tentando aplicar width em um <span> inline (não funciona como esperado) */
+    .problem1 span {
+      width: 150px; /* não terá efeito real, pois span é inline */
+      background-color: #fdd;
+      border: 1px solid #f00;
+    }
+
+    /* 2. Aplicando margin-top em elemento inline (não cria espaçamento vertical) */
+    .problem2 span {
+      margin-top: 20px; /* não desloca o elemento verticalmente */
+      background-color: #dfd;
+      border: 1px solid #0a0;
+      display: inline; /* explicita o inline */
+    }
+
+    /* 3. Seletor errado (não estiliza porque está procurando classe inexistente) */
+    .problema3 div.inexistente { 
+      border: 3px solid #00f;
+      padding: 10px;
+    }
+
+    /* 4. DIVs virando inline sem querer */
+    .problem4 div {
+      display: inline; /* transforma o bloco em inline, pode quebrar o layout */
+      border: 2px solid #b55;
+      padding: 8px;
+      margin: 5px;
+      background-color: #fee;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="problem1">
+    <h2>Problema 1: width em <span> inline</h2>
+    <p><span>Texto dentro do span que tenta ter largura fixa.</span> Veja que a largura não é aplicada corretamente no inline.</p>
+  </section>
+
+  <section class="problem2">
+    <h2>Problema 2: margin-top em inline</h2>
+    <p><span>Span com margin-top que não desloca verticalmente.</span> O espaçamento vertical esperado não aparece.</p>
+  </section>
+
+  <section class="problema3">
+    <h2>Problema 3: seletor errado</h2>
+    <div>Este div não recebe a borda azul porque seletor está errado</div>
+  </section>
+
+  <section class="problem4">
+    <h2>Problema 4: DIVs virando inline</h2>
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <p>Os divs perderam o comportamento block e ficam na mesma linha, quebrando o fluxo.</p>
+  </section>
+
+</body>
+</html>

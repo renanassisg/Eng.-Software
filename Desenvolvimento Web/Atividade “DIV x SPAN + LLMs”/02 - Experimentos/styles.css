@@ -1,0 +1,42 @@
+css
+/* Estilização externa sem frameworks, só CSS puro */
+
+.cards-container {
+  width: 300px;
+  margin: 20px auto; /* espaço fora do container */
+  border: 2px solid #666;
+  padding: 10px; /* área interna do container */
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card {
+  border: 2px solid #00a;
+  padding: 12px; /* espaço interno do block */
+  margin: 5px 0; /* espaço entre cartões */
+  background-color: #def;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.icon {
+  display: inline-block;
+  border: 2px dotted #e44;
+  padding: 4px;
+  color: #e44;
+}
+
+.text {
+  border: 2px dashed #4a4;
+  padding: 4px;
+  color: #292;
+}
+
+/* Comentários explicativos no CSS indicam cada camada: 
+  padding: área interna entre borda e conteúdo;
+  border: contorno visível;
+  margin: espaço externo entre elementos.
+*/

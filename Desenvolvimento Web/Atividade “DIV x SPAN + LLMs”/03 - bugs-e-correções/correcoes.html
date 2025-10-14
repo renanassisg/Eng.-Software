@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exemplos de Problemas CSS - Corrigido</title>
+  <style>
+    /* 1. width em span */
+    .problem1 span {
+      display: inline-block;
+      width: 150px;
+      background-color: #fdd;
+      border: 1px solid #f00;
+    }
+
+    /* 2. margin-top em span */
+    .problem2 span {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #dfd;
+      border: 1px solid #0a0;
+    }
+
+    /* 3. seletor correto */
+    .problema3 div {
+      border: 3px solid #00f;
+      padding: 10px;
+    }
+
+    /* 4. divs como block */
+    .problem4 div {
+      display: block; /* mantém comportamento de bloco */
+      border: 2px solid #b55;
+      padding: 8px;
+      margin: 5px 0;
+      background-color: #fee;
+    }
+  </style>
+</head>
+<body>
+  <section class="problem1">
+    <h2>Problema 1: width em &lt;span&gt; inline</h2>
+    <p>
+      <span>Texto dentro do span que agora respeita a largura.</span>
+      Veja que a largura é aplicada corretamente.
+    </p>
+  </section>
+
+  <section class="problem2">
+    <h2>Problema 2: margin-top em inline</h2>
+    <p>
+      <span>Span com margin-top que agora desloca verticalmente.</span>
+      O espaçamento vertical esperado aparece.
+    </p>
+  </section>
+
+  <section class="problema3">
+    <h2>Problema 3: seletor corrigido</h2>
+    <div>Este div agora recebe a borda azul porque o seletor está correto</div>
+  </section>
+
+  <section class="problem4">
+    <h2>Problema 4: DIVs voltando a block</h2>
+    <div>Div 1</div>
+    <div>Div 2</div>
+    <div>Div 3</div>
+    <p>Os divs mantêm o comportamento block e não quebram o fluxo.</p>
+  </section>
+</body>
+</html>

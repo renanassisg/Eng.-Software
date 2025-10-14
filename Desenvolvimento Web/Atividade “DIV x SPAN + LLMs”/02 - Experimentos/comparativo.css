@@ -1,0 +1,59 @@
+/* Container geral */
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px;
+  background: #fafafa;
+}
+
+h1 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.legend {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Seção comparativa com duas colunas lado a lado */
+.compare-section {
+  display: flex;
+  gap: 40px;
+  border: 2px solid #444;
+  padding: 20px;
+  background-color: #fff;
+}
+
+/* Coluna esquerda com DIVs block empilhados */
+.left-column {
+  flex: 1;
+  border: 2px solid #007acc;
+  padding: 15px;
+  background-color: #d7e9f7;
+}
+
+.block-item {
+  background-color: #bbe1ff;
+  padding: 12px;
+  margin-bottom: 15px; /* espaço entre blocos */
+  border: 2px solid #005f99;
+}
+
+/* Coluna direita com SPANs inline na mesma linha */
+.right-column {
+  flex: 1;
+  border: 2px solid #23d160;
+  padding: 15px;
+  background-color: #e6f4ea;
+  /* spans são inline por padrão */
+}
+
+.inline-item {
+  border: 2px dashed #23a029;
+  padding: 8px 12px;
+  margin-right: 10px; /* espaço entre spans inline */
+  background-color: #b9e6a6;
+  display: inline; /* inline padrão para spans */
+  font-weight: bold;
+}

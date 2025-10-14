@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Cartões (DIVs = block-level) */
+.card {
+  background-color: #fff;
+  border: 3px solid #0077cc; /* Borda visível */
+  padding: 15px;             /* Espaço interno */
+  margin-bottom: 15px;       /* Espaço entre cartões */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* SPANs (inline-level) */
+span {
+  background-color: #ffef9f; /* Evidencia content */
+  border: 1px dashed #d4aa00;
+  padding: 2px 4px;
+}
+
+/* Visualização do box-model */
+.card:nth-child(1) { background-color: #e6f3ff; }  /* content */
+.card:nth-child(2) { background-color: #fff0f5; }  /* content */
+.card:nth-child(3) { background-color: #f0fff4; }  /* content */

@@ -1,0 +1,39 @@
+/* Container geral - block-level com padding e border */
+.cards-container {
+  width: 320px;
+  margin: 30px auto;
+  border: 3px solid #333;
+  padding: 15px; /* espaçamento interno */
+  background-color: #f0f8ff;
+}
+
+/* Cada cartão é um bloco (div) com espaçamentos visíveis */
+.card {
+  border: 2px solid #007acc;
+  padding: 12px;
+  margin-bottom: 15px; /* espaço externo entre cartões */
+  background-color: #d7e9f7;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Ícone transformado em bloco, com largura e altura fixas */
+.icon {
+  display: block;       /* transforma o span inline em bloco */
+  width: 200px;         /* largura fixa */
+  height: 60px;         /* altura fixa */
+  border: 2px dotted #da4453;
+  padding: 6px;
+  font-size: 24px;
+  background-color: #fdeced;
+  margin-bottom: 10px;  /* cria espaço abaixo do bloco */
+}
+
+/* Texto inline com borda tracejada e padding reduzido */
+.text {
+  border: 2px dashed #23d160;
+  padding: 4px 8px;
+  background-color: #e6f4ea;
+  font-size: 16px;
+}
