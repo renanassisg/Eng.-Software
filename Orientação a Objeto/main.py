@@ -13,27 +13,35 @@ from Instituicao import Instituicao
 from Disciplina import Disciplina
 from Curso import Curso
 
-d = Disciplina()
-d.setId("OO")
-d.setDescricao("Orientação a objetos")
 
-t = Curso()
-t.setId("ENG.SOFT 2025")
-t.setDescricao("Engenharia de Software")
+def listarClasses():
 
-d.setCurso(t)
+    d = Disciplina()
+    d.setId("OO")
+    d.setDescricao("Orientação a objetos")
 
-t.addDisciplina(d)
+    t = Curso()
+    t.setId("ENG.SOFT 2025")
+    t.setDescricao("Engenharia de Software")
 
-t.toPrint()
+    d.setCurso(t)
 
-d.toPrint()
+    t.addDisciplina(d)
 
-#ID de cada classe
-#Como filtrar as informações da classe
-#A forma de deixar a classe abstrata é de queal forma
-#__str__ como é
+    t.toPrint()
 
-# O professor explico que devemos fazer os for e while para varrer lista, e depois ele utilizou o try, except e finally para tratar erros,
-#porém ele utilizou isso no main, porque?
-# Também usou dentro do main o open write, mas como banco de dados não deveria utiliza-lo dentro do set.7
+    d.toPrint()
+
+    #ID de cada classe
+    #Como filtrar as informações da classe
+    #A forma de deixar a classe abstrata é de queal forma
+    #__str__ como é
+
+    # O professor explico que devemos fazer os for e while para varrer lista, e depois ele utilizou o try, except e finally para tratar erros,
+    #porém ele utilizou isso no main, porque?
+    # Também usou dentro do main o open write, mas como banco de dados não deveria utiliza-lo dentro do set.7
+
+
+
+if __name__ == '__main__':
+    listarClasses()
