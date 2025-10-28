@@ -7,6 +7,74 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const imagens = document.querySelectorAll(".documento img");
+
+    imagens.forEach(img => {
+        const lente = document.createElement("div");
+        lente.classList.add("zoom-lente");
+        const zoomImg = document.createElement("img");
+        zoomImg.src = img.src;
+        lente.appendChild(zoomImg);
+        document.body.appendChild(lente);
+
+        img.addEventListener("mouseenter", () => {
+            lente.style.display = "block";
+        });
+
+        img.addEventListener("mouseleave", () => {
+            lente.style.display = "none";
+        });
+
+        img.addEventListener("mousemove", e => {
+            const rect = img.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            const zoomX = -x * 2 + lente.offsetWidth / 2;
+            const zoomY = -y * 2 + lente.offsetHeight / 2;
+
+            zoomImg.style.left = `${zoomX}px`;
+            zoomImg.style.top = `${zoomY}px`;
+
+            lente.style.left = `${e.pageX - lente.offsetWidth / 2}px`;
+            lente.style.top = `${e.pageY - lente.offsetHeight / 2}px`;
+        });
+    });
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal-imagem");
+    const modalImg = document.getElementById("imagem-ampliada");
+    const legenda = document.getElementById("legenda");
+    const fechar = document.querySelector(".fechar");
+
+    document.querySelectorAll(".documento img").forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            legenda.textContent = img.alt;
+        });
+    });
+
+    fechar.onclick = () => {
+        modal.style.display = "none";
+    };
+
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    };
+});
+</script>
+
+
 <body>
 
     <!-- Cabeçalho -->
@@ -14,7 +82,7 @@
         <h1>Proclamação da República: Documentos</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="paginaprincipal.html">Página Inicial</a></li>
                 <li><a href="historia.html">História</a></li>
                 <li><a href="personagens.html">Personagens</a></li>
                 <li><a href="documentos.html">Documentos</a></li>
@@ -30,26 +98,58 @@
             <h2>Documentos Históricos</h2>
 
             <div class="documento">
-                <img src="img/manifesto1870.jpg" alt="Manifesto Republicano de 1870">
+                <img src="Manifesto.jpg" alt="Manifesto Republicano de 1870">
                 <div class="documento-info">
                     <h3>Manifesto Republicano - 1870</h3>
                     <p>Primeiro manifesto formal do movimento republicano brasileiro, destacando ideais de liberdade e participação política.</p>
                     <p class="traducao"><strong>Tradução contemporânea:</strong> Documento que propõe a substituição da monarquia por um governo eleito pelo povo, defendendo maior participação cidadã.</p>
-                    <a href="img/manifesto1870.jpg" target="_blank">Visualizar em alta resolução</a>
+                    <p class="instrucoes-zoom">Clique na imagem para ver em tela cheia</p>
+
                 </div>
             </div>
 
             <div class="documento">
-                <img src="img/proclamacao1889.jpg" alt="Proclamação da República - 1889">
+                <img src="constituicao.webp"Proclamação da República - 1889">
                 <div class="documento-info">
                     <h3>Proclamação Oficial da República - 1889</h3>
                     <p>Documento oficial que registra a deposição de Dom Pedro II e a instauração da República.</p>
                     <p class="traducao"><strong>Tradução contemporânea:</strong> Declara formalmente o fim da monarquia no Brasil e o início do governo republicano, estabelecendo novas bases para a sociedade e a política.</p>
-                    <a href="img/proclamacao1889.jpg" target="_blank">Visualizar em alta resolução</a>
+                    <p class="instrucoes-zoom">Clique na imagem para ver em tela cheia</p>
                 </div>
             </div>
 
+            <div class="documento">
+                <img src="leiaurea.jpg" alt="Lei Áurea - 1888">
+                <div class="documento-info">
+                    <h3>Lei Áurea - 1888</h3>
+                    <p>Documento legal que aboliu oficialmente a escravidão no Brasil, assinado pela Princesa Isabel em 13 de maio de 1888.</p>
+                    <p class="traducao"><strong>Tradução contemporânea:</strong> Lei que declara livres todos os escravizados no Brasil, encerrando oficialmente o regime escravocrata no país.</p>
+                    <p class="instrucoes-zoom">Clique na imagem para ver em tela cheia</p>
+                </div>
+            </div>
+
+            <div class="documento">
+                <img src="diario.jpg" alt="Edição do Diário Popular - 15 de Novembro de 1889">
+                <div class="documento-info">
+                    <h3>Diário Popular — Edição de 15 de Novembro de 1889</h3>
+                    <p>Publicação histórica que noticiou a queda da monarquia e a instauração da República no Brasil. A edição trouxe comunicados oficiais, relatos da movimentação militar e declarações do governo provisório.</p>
+                    <p class="traducao"><strong>Tradução contemporânea:</strong> Jornal que informa à população sobre a mudança de regime, destacando o fim do império e o início de um governo republicano liderado por militares e civis.</p>
+                    <p class="instrucoes-zoom">Clique na imagem para ver em tela cheia</p>
+                </div>
+            </div>
+
+
+
         </section>
+
+            <div id="modal-imagem" class="modal">
+                <span class="fechar">&times;</span>
+                <img class="modal-conteudo" id="imagem-ampliada">
+                <div id="legenda"></div>
+            </div>
+
+
+
     </main>
 
     <!-- Rodapé -->

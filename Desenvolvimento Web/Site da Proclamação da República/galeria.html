@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const faixa = document.querySelector(".carrossel-faixa");
+    const slides = document.querySelectorAll(".slide");
+    const btnAnterior = document.querySelector(".carrossel-btn.anterior");
+    const btnProximo = document.querySelector(".carrossel-btn.proximo");
+
+    let indiceAtual = 0;
+
+    function atualizarCarrossel() {
+        const largura = slides[0].clientWidth;
+        faixa.style.transform = `translateX(-${indiceAtual * largura}px)`;
+    }
+
+    btnProximo.addEventListener("click", () => {
+        indiceAtual = (indiceAtual + 1) % slides.length;
+        atualizarCarrossel();
+    });
+
+    btnAnterior.addEventListener("click", () => {
+        indiceAtual = (indiceAtual - 1 + slides.length) % slides.length;
+        atualizarCarrossel();
+    });
+
+    window.addEventListener("resize", atualizarCarrossel);
+});
+</script>
+
 <body>
 
     <!-- Cabeçalho -->
@@ -14,7 +43,7 @@
         <h1>Proclamação da República: Galeria</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Página Inicial</a></li>
+                <li><a href="paginaprincipal.html">Página Inicial</a></li>
                 <li><a href="historia.html">História</a></li>
                 <li><a href="personagens.html">Personagens</a></li>
                 <li><a href="documentos.html">Documentos</a></li>
@@ -25,34 +54,42 @@
     </header>
 
     <!-- Seção Galeria -->
-    <main>
-        <section class="galeria">
-            <h2>Galeria de Imagens</h2>
-            <div class="galeria-container">
+    <div class="carrossel">
+    <button class="carrossel-btn anterior">&#10094;</button>
 
-                <div class="imagem-galeria">
-                    <img src="img/pintura1.jpg" alt="Pintura da Proclamação">
-                    <div class="descricao">Pintura representando Marechal Deodoro proclamando a República.</div>
-                </div>
-
-                <div class="imagem-galeria">
-                    <img src="img/fotografia1.jpg" alt="Fotografia histórica">
-                    <div class="descricao">Fotografia histórica de militares republicanos em 1889.</div>
-                </div>
-
-                <div class="imagem-galeria">
-                    <img src="img/gravura1.jpg" alt="Gravura do período republicano">
-                    <div class="descricao">Gravura ilustrando a sociedade e política do início da República.</div>
-                </div>
-
-                <div class="imagem-galeria">
-                    <img src="img/pintura2.jpg" alt="Outra pintura da Proclamação">
-                    <div class="descricao">Outra pintura representando a cena da Proclamação da República.</div>
-                </div>
-
+    <div class="carrossel-janela">
+        <div class="carrossel-faixa">
+            <div class="slide">
+                <img src="galeria1.jpeg" alt="Pintura da Proclamação">
+                <p class="descricao">Pintura representando Marechal Deodoro proclamando a República.</p>
             </div>
-        </section>
-    </main>
+            <div class="slide">
+                <img src="galeria2.jpg" alt="Fotografia histórica">
+                <p class="descricao">Fotografia histórica de militares republicanos em 1889.</p>
+            </div>
+            <div class="slide">
+                <img src="galeria3.jpg" alt="Gravura do período republicano">
+                <p class="descricao">Gravura ilustrando a sociedade e política do início da República.</p>
+            </div>
+            <div class="slide">
+                <img src="galeria4.jpg" alt="Outra pintura da Proclamação">
+                <p class="descricao">Outra pintura representando a cena da Proclamação da República.</p>
+            </div>
+            <div class="slide">
+                <img src="galeria5.jpeg" alt="Jornal da época">
+                <p class="descricao">Página de jornal noticiando a Proclamação da República em 1889.</p>
+            </div>
+            <div class="slide">
+                <img src="galeria6.webp" alt="Ata oficial">
+                <p class="descricao">Ata oficial da reunião que instaurou o regime republicano no Brasil.</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="carrossel-btn proximo">&#10095;</button>
+</div>
+
+
 
     <!-- Rodapé -->
     <footer>
